@@ -8,4 +8,4 @@ class Dog(models.Model):
   age = models.IntegerField()
 
   def __str__(self):
-    print f'{self.name} the dog has an id of {self.id}'
+    return f'{self.name} the dog has an id of {self.id}'
