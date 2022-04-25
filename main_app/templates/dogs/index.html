@@ -8,7 +8,6 @@
 
 <div class="row">
   {% for dog in dogs  %}
-  <a href="{% url 'detail' dog.id %}">
   <div class="col s12 m6">
     <div class="card">
       <div class="card-content">
@@ -23,11 +22,10 @@
         <p>Description: {{ dog.description}}</p>
       </div>
       <div class="card-action">
-        <a href="#"></a>
+        <a href="{% url 'detail' dog.id %}">Read More</a>
       </div>
     </div>
   </div>
-</a>
   {% endfor %}
 </div>
 
