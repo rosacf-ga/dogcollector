@@ -12,3 +12,11 @@ footer.page-footer {
   padding-top: 0;
   text-align: right;
 }
+
+.btn a {
+  text-decoration: none;
+}
+
+.cancel {
+  color: white;
+}
