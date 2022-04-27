@@ -2,11 +2,6 @@ from django.db import models
 from django.urls import reverse
 
 # Create your models here.
-MEALS = (
-  ('B', 'Breakfast'),
-  ('L', 'Lunch'),
-  ('D', 'Dinner')
-)
 
 class Dog(models.Model):
   name = models.CharField(max_length=100)
@@ -21,6 +16,12 @@ class Dog(models.Model):
     return reverse('detail', kwargs={'dog_id': self.id})
 
 
+MEALS = (
+  ('B', 'Breakfast'),
+  ('L', 'Lunch'),
+  ('D', 'Dinner')
+)
+
 class Feeding(models.Model):
   date = models.DateField()
   meal = models.CharField(
@@ -32,3 +33,6 @@ class Feeding(models.Model):
 
   def __str__(self):
     return f'{self.get_meal_display()} on {self.date}'
+
+  class Meta: 
+    ordering = ['-date']
